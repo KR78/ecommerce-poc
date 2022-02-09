@@ -1,0 +1,36 @@
+@mixin fontSize($size: 20px) {
+  font-size:  pxToRem($size);
+}
+
+@mixin font(
+  $size: $base-font-size,
+  $weight: 500,
+  $color: #0a2b93,
+) {
+  @include fontSize($size);
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin padding-top-leftRight-bottom(
+  $top: 0px,
+  $leftRight: 0px,
+  $bottom: 0px,
+) {
+  padding: pxToRem($top) pxToRem($leftRight) pxToRem($bottom);
+}
+
+@mixin leftRight(
+  $leftRight: 0px,
+) {
+  padding: 0 pxToRem($leftRight);
+}
+
+@mixin padding-top-right-bottom-left(
+  $top: 0px,
+  $right: 0px,
+  $bottom: 0px,
+  $left: 0px,
+) {
+  padding: pxToRem($top) pxToRem($right) pxToRem($bottom) pxToRem($left);
+}
