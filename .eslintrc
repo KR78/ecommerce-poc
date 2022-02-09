@@ -1,14 +1,27 @@
 {
-  "plugins": ["prettier"],
-  "extends": ["next", "next/core-web-vitals", "prettier"],
+  "extends": ["next", "next/core-web-vitals"],
   "rules": {
-    "prettier/prettier": "error",
-    "camelcase": "off",
+    "no-shadow": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-empty-function": "off",
+    "no-useless-constructor": "off",
     "import/prefer-default-export": "off",
-    "react/jsx-filename-extension": "off",
+    "no-use-before-define": "off",
+    "linebreak-style": "off",
     "react/jsx-props-no-spreading": "off",
-    "react/no-unused-prop-types": "off",
-    "react/require-default-props": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -19,13 +32,21 @@
         "jsx": "never"
       }
     ],
-    "quotes": "off",
-    "jsx-a11y/anchor-is-valid": [
+    "import/no-extraneous-dependencies": [
       "error",
       {
-        "components": ["Link"],
-        "specialLink": ["hrefLeft", "hrefRight"],
-        "aspects": ["invalidHref", "preferButton"]
+        "devDependencies": [
+          "**/*.test.js",
+          "**/*.test.jsx",
+          "**/*.test.ts",
+          "**/*.test.tsx"
+        ]
+      }
+    ],
+    "react/jsx-filename-extension": [
+      2,
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     ]
   },
@@ -34,21 +55,14 @@
       "files": "**/*.+(ts|tsx)",
       "parser": "@typescript-eslint/parser",
       "plugins": ["@typescript-eslint/eslint-plugin"],
-      "extends": ["plugin:@typescript-eslint/recommended", "prettier"],
+      "extends": ["plugin:@typescript-eslint/recommended"],
       "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "no-use-before-define": [0],
         "@typescript-eslint/no-use-before-define": [1],
         "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-var-requires": "off",
-        "@typescript-eslint/quotes": [
-          2,
-          "backtick",
-          {
-            "avoidEscape": true
-          }
-        ]
+        "@typescript-eslint/no-var-requires": "off"
       }
     }
   ]
