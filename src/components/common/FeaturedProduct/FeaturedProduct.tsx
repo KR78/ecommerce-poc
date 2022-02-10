@@ -46,8 +46,8 @@ const FeaturedProduct = ({
             products={product?.details?.recommendations || []}
           />
           <ProductDetails
-            size={product?.details?.size || 0}
-            dimensions={product?.details?.dimensions || {width: 0, height: 0}}
+            size={product?.details?.size || undefined}
+            dimensions={product?.details?.dimensions || {width: undefined, height: undefined}}
           />
         </section>
       </article>

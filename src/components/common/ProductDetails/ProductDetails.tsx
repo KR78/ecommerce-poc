@@ -1,10 +1,10 @@
 import { Dimensions } from '@/types';
 import React from 'react';
-import convertKBToMB from './helpers/convertKbToMB';
+import convertKBToMB from './helpers/convertKBToMB';
 import style from './ProductDetails.module.scss';
 
 interface ProductDetailsProps {
-  size: number,
+  size: number | undefined,
   dimensions: Dimensions
 }
 
@@ -20,8 +20,8 @@ const ProductDetails = ({
       <section className={style.details}>
         {
           dimensions
-          && dimensions?.width > 0
-          && dimensions?.height > 0
+          && dimensions?.width
+          && dimensions?.height
           && (
             <span>
               {`Size: ${dimensions.width} x ${dimensions.height} pixel`}
@@ -30,7 +30,6 @@ const ProductDetails = ({
         }
         {
           size
-          && size > 0
           && (
             <span>
               {`Size: ${convertKBToMB(size)} mb`}
