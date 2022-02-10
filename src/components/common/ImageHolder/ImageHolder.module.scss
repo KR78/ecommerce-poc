@@ -1,3 +1,24 @@
+@import 'src/scss/styles.scss';
+
 .wrapper {
-  
+  @extend %flex-column;
+  position: relative;
+
+  & > .featured,
+  & > .bestSeller {
+    position: absolute;
+  }
+
+  & > .featured {
+    bottom: 0;
+    background: $white;
+    @include font(15px, 700, $black);
+    padding: pxToRem(21px) pxToRem(47px);
+  }
+
+  & > .bestSeller {
+    top: 0;
+    @include font(20px, 400, $black);
+    @include padding-top-right-bottom-left(8px, 10px, 34px, 25px);
+  }
 }
