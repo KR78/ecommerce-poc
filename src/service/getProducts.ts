@@ -1,16 +1,30 @@
-import { gql, useQuery } from '@apollo/client';
+import { Products } from '@/types';
+import {
+  gql,
+  useQuery,
+  ApolloError,
+} from '@apollo/client';
 
-const FetchProducts = () => {
+const FetchProducts = (): {
+  loading: boolean,
+  error: ApolloError | undefined,
+  data: {
+    products: Products
+  },
+} => {
   const GET_PRODUCTS = gql`
     query GetProducts {
       products {
         id
         name
+        price
         image {
           src
           alt
         }
-        price
+        featured
+        bestSeller: bestseller
+        details
       }
     }
   `;
