@@ -1,17 +1,39 @@
-import { Products } from '@/types';
+import { Recommendations } from '@/types';
+import Link from 'next/link';
 import React from 'react';
+import ImageHolder from '../ImageHolder';
 import style from './Recommendations.module.scss';
 
 interface RecommendationsProps {
-  products: Products
+  products: Recommendations
 }
 
 const Recommendations = ({
   products,
 }: RecommendationsProps) => {
   return (
-    <article>
-      People also buy
+    <article className={style.wrapper}>
+      <header className={style.header}>
+        People also buy
+      </header>
+      <section className={style.imagesWrapper}>
+        {
+          products
+          && products.map((product, index) => (
+            <Link
+              href="#"
+              key={`${product?.src || ''}-${index}`}
+            >
+              <a>
+                <ImageHolder
+                  image={product}
+                  placeHolderSrc="https://picsum.photos/97/122"
+                />
+              </a>
+            </Link>
+          ))
+        }
+      </section>
     </article>
   );
 };

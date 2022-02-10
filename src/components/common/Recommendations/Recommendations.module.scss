@@ -1,3 +1,18 @@
+@import "src/scss/styles.scss";
+
 .wrapper {
-  
+  margin-bottom: pxToRem(40px);
+
+  & > .header {
+    @include font(22px, 700, $black);
+    margin-bottom: pxToRem(30px);
+  }
+
+  & > .imagesWrapper {
+    @extend %flex-row;
+
+    & > a:not(:last-of-type) {
+      margin-right: pxToRem(30px);
+    }
+  }
 }
