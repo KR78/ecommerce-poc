@@ -1,13 +1,23 @@
-@import "src/scss/styles.scss";
+@import 'src/scss/styles.scss';
 
 .wrapper {
-  .logo {
+  @extend %flex-row-align-center;
+  padding: pxToRem(30px) pxToRem(33px);
+  border-bottom: pxToRem(4px) solid $mercury;
+  margin-bottom: pxToRem(32px);
 
+  & > .logo {
+    .logoImage {
+      width: pxToRem(124px);
+    }
   }
 
-  .topRightMenu {
-    .cart {
-      
+  & > .topRightMenu {
+    margin-left: auto;
+    & > .cart {
+      .cartIcon {
+        width: pxToRem(32px);
+      }
     }
   }
 }
