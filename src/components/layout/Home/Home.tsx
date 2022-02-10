@@ -31,35 +31,36 @@ const Home = () => {
 
   }, [loading, error, data])
 
-  return (
-    <article className={style.wrapper}>
-      <section>
-        {
-          featuredProduct
-          && (
-            <FeaturedProduct
-              product={featuredProduct}
-            />
-          )
-        }
-      </section>
-      <section className={style.breadCrumbAndSortHeader}>
-        <BreadCrumb
-          page='Photography'
-          subPage='Premium Photos'
-        />
-        <Button
-          unStyled
-          className={style.sort}
-          onClick={() => setisFilterOpen(true)}
-        >
-          <span>
-            <img src="icons/filter.svg" alt="Filter Icon" />
-          </span>
-        </Button>
-      </section>
-    </article>
-  );
+  return !isLoading
+    && (
+      <article className={style.wrapper}>
+        <section>
+          {
+            featuredProduct
+            && (
+              <FeaturedProduct
+                product={featuredProduct}
+              />
+            )
+          }
+        </section>
+        <section className={style.breadCrumbAndSortHeader}>
+          <BreadCrumb
+            page='Photography'
+            subPage='Premium Photos'
+          />
+          <Button
+            unStyled
+            className={style.sort}
+            onClick={() => setisFilterOpen(true)}
+          >
+            <span>
+              <img src="icons/filter.svg" alt="Filter Icon" />
+            </span>
+          </Button>
+        </section>
+      </article>
+    );
 };
 
 export default Home;
