@@ -24,6 +24,7 @@ const FeaturedProduct = ({
         placeHolderSrc="https://picsum.photos/385/239"
       />
       <Button
+        unStyled
         className={style.addToCartBtn}
         onClick={() => null}
       >
