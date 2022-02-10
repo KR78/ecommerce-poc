@@ -43,3 +43,39 @@ export interface Dimensions {
   width: number | undefined,
   height: number | undefined,
 }
+
+export interface Aggregate {
+  aggregate: {
+    count: number
+  }
+}
+
+export interface Category {
+  id: number,
+  name: string,
+}
+
+export type Categories = Category[]
+
+export interface FilterOptionData {
+  name: string,
+  value: any
+  onClick(v: any): void
+}
+
+export type FilterOptions = FilterOptionData[]
+
+export enum InputType {
+  CHECKBOX = 'checkbox',
+  RADIO = 'radio'
+}
+
+export interface FilterOption {
+  name: string,
+  inputType: InputType,
+  options: FilterOptions
+}
+
+export interface Filters  {
+  [v: string]: FilterOption
+}
