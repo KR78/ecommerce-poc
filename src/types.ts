@@ -26,3 +26,8 @@ export interface CartItem extends Product {
 }
 
 export type CartItems = CartItem[];
+
+export interface Dimensions {
+  width: number,
+  height: number,
+}
