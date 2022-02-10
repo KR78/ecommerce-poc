@@ -1,6 +1,7 @@
 import React from 'react';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 import CartProvider from 'src/components/providers/cartProvider';
+import FilterProvider from 'src/components/providers/filterProvider';
 import Main from '../Main';
 import NavBar from '../NavBar';
 
@@ -21,7 +22,11 @@ const LayoutWrapper = ({ children }: LayoutWrapperProps) => (
   <ApolloProvider client={client}>
     <CartProvider>
       <NavBar />
-      <Main>{children}</Main>
+      <FilterProvider>
+        <Main>
+          {children}
+        </Main>
+      </FilterProvider>
     </CartProvider>
   </ApolloProvider>
 );
