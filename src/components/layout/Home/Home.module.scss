@@ -1,0 +1,14 @@
+@import "src/scss/styles.scss";
+
+.wrapper {
+  position: relative;
+
+  & > .breadCrumbAndSortHeader {
+    @extend %flex-row;
+    padding: 0 pxToRem(15px);
+
+    & > .sort {
+      margin-left: auto;
+    }
+  }
+}
