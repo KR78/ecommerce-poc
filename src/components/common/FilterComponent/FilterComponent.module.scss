@@ -1,0 +1,57 @@
+@import "src/scss/styles.scss";
+
+.wrapper {
+  & > header {
+    margin-top: pxToRem(19px);
+    @extend %flex-row-align-center;
+
+    & > h1 {
+      @include font(34px, 700, $black);
+    }
+
+    & > span {
+      margin-left: auto;
+      margin-right: pxToRem(36px);
+
+      img {
+        width: pxToRem(18px);
+        height: pxToRem(18px);
+      }
+    }
+  }
+
+  & > header > h1,
+  & > .categorySection > .categorySectionHeader {
+    margin-left: pxToRem(36px);
+  }
+
+  & > .categorySection {
+    margin-bottom: pxToRem(62px);
+
+    & > ul {
+      list-style: none;
+    }
+
+    & > .categorySectionHeader {
+      @include font(34px, 700, $black);
+      margin-bottom: pxToRem(39px);
+    }
+  }
+
+  & > .categorySection:not(:last-of-type) {
+    padding-bottom: pxToRem(31px);
+    margin-bottom: pxToRem(31px);
+    border-bottom: pxToRem(1px) solid $silver;
+  }
+}
+
+.mobileFilter {
+  top: pxToRem(88px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  overflow-y: auto;
+  background: $white;
+  width: 100%;
+}
