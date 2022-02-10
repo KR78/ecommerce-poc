@@ -1,4 +1,7 @@
-import { Products } from '@/types';
+import {
+  Products,
+  Aggregate,
+} from '@/types';
 import {
   gql,
   useQuery,
@@ -9,12 +12,18 @@ const FetchProducts = (): {
   loading: boolean,
   error: ApolloError | undefined,
   data: {
+    products_aggregate: Aggregate,
     products: Products
   },
 } => {
   const GET_PRODUCTS = gql`
     query GetProducts {
-      products {
+      products_aggregate {
+        aggregate {
+          count
+        }
+      }
+      products(limit: 6, offset: 0) {
         id
         name
         price
