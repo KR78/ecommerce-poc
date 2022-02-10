@@ -12,8 +12,9 @@ const BreadCrumb = ({
 }: BreadCrumbProps) => {
   return (
     <div className={style.wrapper}>
-      <span className={style.page}>{`${page} / `}</span>
-      <span className={style.subPage}>${subPage}</span>
+      <span className={style.page}>{page}</span>
+      <img src="/icons/seperator.svg" alt="Seperator Icon" />
+      <span className={style.subPage}>&nbsp;{subPage}</span>
     </div>
   )
 }
