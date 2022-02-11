@@ -11,7 +11,7 @@
     "typescript"
   ],
   "scripts": {
-    "dev": "next",
+    "dev": "next-p 7171",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",

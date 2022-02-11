@@ -65,7 +65,7 @@ const Home = () => {
     refetch();
   };
 
-  if (!isLoading && !hasError) {
+  if (!hasError) {
     return (
       <article className={style.wrapper}>
         <section>
@@ -113,12 +113,6 @@ const Home = () => {
         </section>
       </article>
     );
-  } else if (hasError) {
-    return (
-      <div>
-        {`Oops, something went wrong, please try again: ${hasError}`}
-      </div>
-    )
   }
   // TODO: check if isLoading and handle page loading by adding Skeleton loaders to components
 };

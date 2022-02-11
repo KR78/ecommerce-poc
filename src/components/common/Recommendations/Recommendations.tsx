@@ -1,11 +1,11 @@
-import { Recommendations } from '@/types';
+import { Recommendations as RecommendationsType } from '@/types';
 import Link from 'next/link';
 import React from 'react';
 import ImageHolder from '../ImageHolder';
 import style from './Recommendations.module.scss';
 
 interface RecommendationsProps {
-  products: Recommendations
+  products: RecommendationsType
 }
 
 const Recommendations = ({
