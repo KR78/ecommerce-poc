@@ -12,7 +12,7 @@ interface FilterProviderProps {
 }
 
 const FilterProvider = ({ children }: FilterProviderProps) => {
-  const [isFilterOpen, setisFilterOpen] = React.useState(true);
+  const [isFilterOpen, setisFilterOpen] = React.useState(false);
 
   return (
     <FilterContext.Provider

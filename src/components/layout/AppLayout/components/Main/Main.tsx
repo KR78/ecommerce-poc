@@ -12,12 +12,6 @@ const Main = ({ children }: LayoutProps) => {
   const { cart } = useCartProvider();
   const { isFilterOpen } = useFilterProvider();
 
-  console.log({
-    isFilterOpen,
-    useCartProvider: useCartProvider(),
-    useFilterProvider: useFilterProvider(),
-  })
-
   return (
     <>
       <main
