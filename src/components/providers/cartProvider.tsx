@@ -39,7 +39,7 @@ const CartProvider = ({ children }: CartProviderProps) => {
   const addProductToCart = (product: Product) => {
     setCartLoading(true);
     setTimeout(() => {
-      dispatch({ type: ADD_PRODUCT, product });
+      dispatch(({ type: ADD_PRODUCT, product } as any));
       setCartLoading(false);
       setIsCartOpen(true); // open cart when product is added
       window.scrollTo({top: 0, behavior: 'smooth'}); //scroll to top
@@ -49,7 +49,7 @@ const CartProvider = ({ children }: CartProviderProps) => {
   const removeProductFromCart = (productId: number) => {
     setCartLoading(true);
     setTimeout(() => {
-      dispatch({ type: REMOVE_PRODUCT, productId });
+      dispatch(({ type: REMOVE_PRODUCT, productId } as any));
       setCartLoading(false);
     }, 300);
   };
@@ -57,13 +57,13 @@ const CartProvider = ({ children }: CartProviderProps) => {
   const deleteProductFromCart = (productId: number) => {
     setCartLoading(true);
     setTimeout(() => {
-      dispatch({ type: DELETE_PRODUCT, productId });
+      dispatch(({ type: DELETE_PRODUCT, productId } as any));
       setCartLoading(false);
     }, 300);
   };
 
   const updateCart = (cart: any) => {
-    dispatch({ type: UPDATE_CART, cart });
+    dispatch(({ type: UPDATE_CART, cart } as any));
   };
 
   const cart = cartState?.cart || [];
