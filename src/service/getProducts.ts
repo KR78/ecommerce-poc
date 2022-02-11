@@ -1,21 +1,20 @@
 import {
-  Products,
-  Aggregate,
+  ProductsDataState,
 } from '@/types';
 import {
   gql,
   useQuery,
-  ApolloError,
 } from '@apollo/client';
 
-const FetchProducts = (): {
-  loading: boolean,
-  error: ApolloError | undefined,
-  data: {
-    products_aggregate: Aggregate,
-    products: Products
-  },
-} => {
+interface FetchProductsProps {
+  itemsPerPage: number,
+  offset: number
+}
+
+const FetchProducts = ({
+  itemsPerPage,
+  offset,
+}: FetchProductsProps): ProductsDataState => {
   const GET_PRODUCTS = gql`
     query GetProducts {
       products_aggregate {
@@ -23,7 +22,7 @@ const FetchProducts = (): {
           count
         }
       }
-      products(limit: 6, offset: 0) {
+      products(limit: ${itemsPerPage}, offset: ${offset}) {
         id
         name
         price
@@ -41,12 +40,13 @@ const FetchProducts = (): {
     }
   `;
 
-  const { loading, error, data } = useQuery(GET_PRODUCTS);
+  const { loading, error, data, refetch } = useQuery(GET_PRODUCTS);
 
   return {
     loading,
     error,
     data,
+    refetch,
   };
 };
 

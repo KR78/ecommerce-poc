@@ -1,4 +1,4 @@
-@import 'src/scss/styles.scss';
+@import "src/scss/styles.scss";
 
 .wrapper {
   @extend %flex-row-align-center;
@@ -17,6 +17,12 @@
     & > .cart {
       .cartIcon {
         width: pxToRem(32px);
+      }
+
+      & > .cartItemsCount {
+        padding: 0 pxToRem(5px);
+        background: $black;
+        color: $white;
       }
     }
   }

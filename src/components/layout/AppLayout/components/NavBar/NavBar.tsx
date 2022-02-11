@@ -37,7 +37,12 @@ const NavBar = () => {
                 className={style.cartIcon}
               />
             </Button>
-            <span className={style.cartItemsCount}>{cartItemsCount}</span>
+            {
+              cartItemsCount > 0
+              && (
+                <span className={style.cartItemsCount}>{cartItemsCount}</span>
+              )
+            }
           </div>
         </div>
       </article>

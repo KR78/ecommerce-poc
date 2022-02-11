@@ -1,3 +1,6 @@
+import {
+  ApolloError, ApolloQueryResult, OperationVariables,
+} from '@apollo/client';
 export interface ProductImage {
   src: string;
   alt: string;
@@ -11,6 +14,7 @@ export interface Product {
   id: number,
   name: string,
   image: ProductImage,
+  category: Category,
   price: number,
   featured: boolean,
   bestSeller: boolean,
@@ -76,6 +80,18 @@ export interface FilterOption {
   options: FilterOptions
 }
 
-export interface Filters  {
+export interface Filters {
   [v: string]: FilterOption
+}
+
+export interface ProductsData {
+  products_aggregate: Aggregate,
+  products: Products
+}
+
+export interface ProductsDataState {
+  loading: boolean,
+  error: ApolloError | undefined,
+  data: ProductsData,
+  refetch(variables?: Partial<OperationVariables> | undefined): Promise<ApolloQueryResult<any>>
 }

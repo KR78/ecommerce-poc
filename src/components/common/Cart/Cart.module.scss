@@ -1,0 +1,60 @@
+@import "src/scss/styles.scss";
+
+.wrapper {
+  top: pxToRem(96px);
+  width: 100%;
+  min-height: pxToRem(279px);
+  background: $white;
+  position: absolute;
+  padding: pxToRem(27px);
+  border: pxToRem(4px) solid $mercury;
+
+  & > header {
+    @extend %flex-row;
+    margin-bottom: pxToRem(27px);
+
+    & > button {
+      margin-left: auto;
+    }
+  }
+
+  & > .clearButton {
+    width: 100%;
+    height: pxToRem(55px);
+    background: $white;
+    text-transform: uppercase;
+    border: pxToRem(3px) solid $black;
+    @include font(23px, 500, $black);
+  }
+
+  & > .cartItem {
+    @extend %flex-row;
+    padding-bottom: pxToRem(24px);
+    margin-bottom: pxToRem(25px);
+    border-bottom: pxToRem(1px) solid $silver;
+
+    & > .details {
+      @extend %flex-column-justify-spaced-between;
+
+      & > .name {
+        @include font(20px, 700, $black);
+      }
+      & > .price {
+        @include font(29px, 400, $dove-gray);
+      }
+    }
+
+    & > .image {
+      margin-left: auto;
+
+      & > img {
+        width: pxToRem(149px);
+        height: pxToRem(86px);
+      }
+    }
+  }
+
+  & > .noItems {
+    @extend %flex-row-justify-center;
+  }
+}

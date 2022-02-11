@@ -4,6 +4,7 @@ import Button from '../Button';
 import ImageHolder from '../ImageHolder';
 import Recommendations from '../Recommendations';
 import ProductDetails from '../ProductDetails';
+import { useCartProvider } from '@/components/providers/cartProvider';
 import style from './FeaturedProduct.module.scss';
 
 interface FeaturedProductProps {
@@ -13,6 +14,8 @@ interface FeaturedProductProps {
 const FeaturedProduct = ({
   product,
 }: FeaturedProductProps) => {
+  const { addProductToCart } = useCartProvider();
+
   return (
     <article className={style.wrapper}>
       <header className={style.header}>
@@ -26,7 +29,7 @@ const FeaturedProduct = ({
       <Button
         unStyled
         className={style.addToCartBtn}
-        onClick={() => null}
+        onClick={() => addProductToCart(product)}
       >
         Add to Cart
       </Button>
@@ -48,7 +51,7 @@ const FeaturedProduct = ({
           />
           <ProductDetails
             size={product?.details?.size || undefined}
-            dimensions={product?.details?.dimensions || {width: undefined, height: undefined}}
+            dimensions={product?.details?.dimensions || { width: undefined, height: undefined }}
           />
         </section>
       </article>

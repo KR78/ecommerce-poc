@@ -62,6 +62,7 @@ const PageNavigation = (
                   }
                   <li key={`${pageNumber}-${i}`}>
                     <Button
+                      key={`${pageNumber}-${i}`}
                       unStyled
                       onClick={() => {
                         if (pageNumber !== '...') {

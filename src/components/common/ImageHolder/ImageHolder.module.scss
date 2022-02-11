@@ -3,6 +3,11 @@
 .wrapper {
   @extend %flex-column;
   position: relative;
+  min-height: pxToRem(239px);
+
+  & > img {
+    height: inherit;
+  }
 
   & > .featured,
   & > .bestSeller {

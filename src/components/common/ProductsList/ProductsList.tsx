@@ -28,6 +28,7 @@ const ProductsList = ({
           >
             <ImageHolder
               image={product?.image}
+              className={style.productImage}
               bestSeller={product?.bestSeller}
             />
             <Button

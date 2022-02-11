@@ -2,7 +2,7 @@
 
 .pageNumbers {
   @extend %flex-row-justify-center;
-  margin-bottom: pxToRem(20px);
+  padding-bottom: pxToRem(20px);
   padding-top: pxToRem(20px);
   padding-right: pxToRem(60px);
 

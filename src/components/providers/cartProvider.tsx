@@ -41,6 +41,8 @@ const CartProvider = ({ children }: CartProviderProps) => {
     setTimeout(() => {
       dispatch({ type: ADD_PRODUCT, product });
       setCartLoading(false);
+      setIsCartOpen(true); // open cart when product is added
+      window.scrollTo({top: 0, behavior: 'smooth'}); //scroll to top
     }, 300);
   };
 

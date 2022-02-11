@@ -2,6 +2,10 @@
 
 .wrapper {
   & > .productWrapper {
+    & > .productImage {
+      height: pxToRem(454px);
+    }
+
     & > .addToCartBtn {
       width: 100%;
       text-transform: uppercase;
