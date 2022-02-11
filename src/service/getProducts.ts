@@ -1,26 +1,52 @@
-import { gql, useQuery } from '@apollo/client';
+import {
+  ProductsDataState,
+} from '@/types';
+import {
+  gql,
+  useQuery,
+} from '@apollo/client';
 
-const FetchProducts = () => {
+interface FetchProductsProps {
+  itemsPerPage: number,
+  offset: number
+}
+
+const FetchProducts = ({
+  itemsPerPage,
+  offset,
+}: FetchProductsProps): ProductsDataState => {
   const GET_PRODUCTS = gql`
     query GetProducts {
-      products {
+      products_aggregate {
+        aggregate {
+          count
+        }
+      }
+      products(limit: ${itemsPerPage}, offset: ${offset}) {
         id
         name
+        price
+        category {
+          name
+        }
         image {
           src
           alt
         }
-        price
+        featured
+        bestSeller: bestseller
+        details
       }
     }
   `;
 
-  const { loading, error, data } = useQuery(GET_PRODUCTS);
+  const { loading, error, data, refetch } = useQuery(GET_PRODUCTS);
 
   return {
     loading,
     error,
     data,
+    refetch,
   };
 };
 

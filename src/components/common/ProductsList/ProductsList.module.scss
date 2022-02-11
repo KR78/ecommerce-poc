@@ -1,0 +1,47 @@
+@import "src/scss/styles.scss";
+
+.wrapper {
+  & > .productWrapper {
+    & > .productImage {
+      height: pxToRem(454px);
+    }
+
+    & > .addToCartBtn {
+      width: 100%;
+      text-transform: uppercase;
+      background-color: $black;
+      @include font(23px, 500, $white);
+      padding: pxToRem(13px) 0;
+      margin-bottom: pxToRem(19px);
+    }
+
+    & > .productDetails {
+      & > .productCategory,
+      & > .productName {
+        text-transform: capitalize;
+      }
+
+      & > .productCategory {
+        @include font(22px, 700, $dove-gray);
+      }
+
+      & > .productName {
+        @include font(22px, 700, $black);
+        padding-top: pxToRem(17px);
+        padding-bottom: pxToRem(21px);
+      }
+
+      & > .productPrice {
+        @include font(29px, 400, $dove-gray);
+      }
+    }
+  }
+
+  & > .productWrapper:first-of-type {
+    margin-top: pxToRem(21px);
+  }
+
+  & > .productWrapper:not(:first-of-type) {
+    margin-top: pxToRem(40px);
+  }
+}

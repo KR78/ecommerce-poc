@@ -1,0 +1,33 @@
+@import "src/scss/styles.scss";
+
+.wrapper {
+  @extend %flex-column;
+  position: relative;
+  min-height: pxToRem(239px);
+
+  & > img {
+    height: inherit;
+  }
+
+  & > .featured,
+  & > .bestSeller {
+    position: absolute;
+  }
+
+  & > .featured {
+    bottom: 0;
+    @include font(15px, 700, $black);
+    padding: pxToRem(21px) pxToRem(47px);
+  }
+
+  & > .featured,
+  & > .bestSeller {
+    background: $white;
+  }
+
+  & > .bestSeller {
+    top: 0;
+    @include font(20px, 400, $black);
+    @include padding-top-right-bottom-left(8px, 34px, 10px, 25px);
+  }
+}

@@ -1,0 +1,17 @@
+@import "src/scss/styles.scss";
+
+.wrapper {
+  & > .header {
+    @include font(22px, 700, $black);
+    margin-bottom: pxToRem(23px);
+  }
+
+  & > .details {
+    @extend %flex-column;
+    @include font(22px, 400, $dove-gray);
+
+    & > span:first-of-type {
+      margin-bottom: pxToRem(14px);
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import "src/scss/styles.scss";
+
+.pageNumbers {
+  @extend %flex-row-justify-center;
+  padding-bottom: pxToRem(20px);
+  padding-top: pxToRem(20px);
+  padding-right: pxToRem(60px);
+
+  & > li {
+    list-style: none;
+
+    & > .pageButton {
+      @include font(29px, 400, $nobel);
+      margin-left: pxToRem(15px);
+    }
+
+    & > .pageButtonActive {
+      @include font(29px, 600, $black);
+    }
+  }
+
+  & > li:last-of-type {
+    & > .pageButton {
+      margin-right: pxToRem(21px);
+    }
+  }
+}

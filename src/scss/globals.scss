@@ -73,3 +73,8 @@ b,
 strong {
   line-height: 1;
 }
+
+main {
+  height: 100vh;
+  padding: 0 pxToRem(15px);
+}
