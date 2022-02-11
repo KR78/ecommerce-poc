@@ -27,6 +27,9 @@ const FetchProducts = (): {
         id
         name
         price
+        category {
+          name
+        }
         image {
           src
           alt
